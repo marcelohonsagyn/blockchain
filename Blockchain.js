@@ -17,10 +17,10 @@ class Blockchain {
           return this.blockchain[this.blockchain.length - 1];
       }
 
-      addChain(newBlock) {
-          newBlock.precedingHash = this.getLastBlock().hash;
-          newBlock.proofChain(this.complexityLevel);
-          this.blockchain.push(newBlock);
+      addChain(block) {
+          block.precedingHash = this.getLastBlock().hash;
+          block.proofChain(this.complexityLevel);
+          this.blockchain.push(block);
       }
 
       validateChain() {
